@@ -1,9 +1,6 @@
 package com.fravega.ecommerce.poker.test.unit.hands
 
-import com.fravega.ecommerce.poker.domain.hands.Card
-import com.fravega.ecommerce.poker.domain.hands.CardValue
-import com.fravega.ecommerce.poker.domain.hands.Hand
-import com.fravega.ecommerce.poker.domain.hands.HandValue
+import com.fravega.ecommerce.poker.domain.hands.*
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 
@@ -23,7 +20,11 @@ internal class HandOfPairTest {
 
 
     private fun givenAHandWithAPair() {
-        hand = Hand(listOf(Card(CardValue.TWO), Card(CardValue.THREE), Card(CardValue.FOUR), Card(CardValue.FIVE), Card(CardValue.FIVE)))
+        hand = Hand(listOf(Card(CardValue.TWO, Suit.DIAMONDS),
+                Card(CardValue.THREE, Suit.DIAMONDS),
+                Card(CardValue.FOUR, Suit.HEARTS),
+                Card(CardValue.FIVE, Suit.CLUBS),
+                Card(CardValue.FIVE, Suit.SPADES)))
     }
 
     private fun whenResolveHandValue() {
