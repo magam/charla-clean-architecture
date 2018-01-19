@@ -12,7 +12,8 @@ enum class CardValue(val value: Int) {
     TEN(10),
     JACK(11),
     QUEEN(12),
-    KING(13);
+    KING(13),
+    ACE(14);
 
     companion object {
         fun fromValue(value: Int) = CardValue.values().first { it.value == value }
@@ -33,6 +34,6 @@ enum class Suit(private val code: String) {
 
 data class Card(val cardValue: CardValue, val suit: Suit) {
     init {
-        check(cardValue.value in 2..13, { "Card value must be between 2 and 13" })
+        check(cardValue.value in 2..14, { "Card value must be between 2 and 13" })
     }
 }
