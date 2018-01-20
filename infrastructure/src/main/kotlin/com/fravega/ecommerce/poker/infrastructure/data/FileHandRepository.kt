@@ -3,7 +3,7 @@ package com.fravega.ecommerce.poker.infrastructure.data
 import com.fravega.ecommerce.poker.domain.model.*
 import java.io.File
 
-class FileHandRepository(private val path: String, private val handFactory: HandFactory) : HandRepository {
+class FileHandRepository(path: String, private val handFactory: HandFactory) : HandRepository {
 
     private val lines: List<String> = File(path).readLines()
 
@@ -22,7 +22,6 @@ class FileHandRepository(private val path: String, private val handFactory: Hand
             val suit = it[1]
             Card(CardValue.fromValue(getValueOf(card.toString())), Suit.fromCode(suit.toString()))
         }
-
     }
 
     private fun getValueOf(text: String): Int = when (text) {
@@ -32,7 +31,5 @@ class FileHandRepository(private val path: String, private val handFactory: Hand
         "J" -> 11
         "T" -> 10
         else -> text.toInt()
-
     }
-
 }

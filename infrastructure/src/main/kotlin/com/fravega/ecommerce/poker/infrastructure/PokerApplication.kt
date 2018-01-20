@@ -28,7 +28,8 @@ class PokerApplication : Application<PokerConfiguration>() {
 
     override fun run(configuration: PokerConfiguration, environment: Environment) {
         val injector = Injector(configuration)
-        environment.jersey().register(injector.player1WinsResource)
+        environment.jersey().register(injector.player1VictoriesResource)
+        environment.jersey().register(injector.winnerResource)
     }
 }
 

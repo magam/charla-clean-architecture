@@ -12,7 +12,10 @@ internal class InMemoryHandRepository : HandRepository {
                 aPairOfHandsWinningPlayer2(),
                 aPairOfHandsWinningPlayer2(),
                 aPairOfHandsWinningPlayer1(),
-                aPairOfHandsWinningPlayer1()
+                aPairOfHandsWinningPlayer1(),
+                aPairOfHandsWinningPlayer2(),
+                aPairOfHandsWinningPlayer2(),
+                aPairOfHandsWinningPlayer2()
         )
     }
 

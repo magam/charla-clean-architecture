@@ -1,26 +1,27 @@
 package com.fravega.ecommerce.poker.test.unit.actions
 
-import com.fravega.ecommerce.poker.domain.actions.CalculatePlayer1Wins
+import com.fravega.ecommerce.poker.domain.actions.CalculateWinner
 import com.fravega.ecommerce.poker.domain.model.Deck
 import com.fravega.ecommerce.poker.domain.model.HandRepository
+import com.fravega.ecommerce.poker.domain.model.Player
 import com.fravega.ecommerce.poker.test.doubles.InMemoryHandRepository
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 
-internal class CalculatePlayer1WinsTest {
+internal class CalculateWinnerTest {
 
     private lateinit var aHandRepository: HandRepository
-    private lateinit var calculatePlayer1WinsAction: CalculatePlayer1Wins
-    private var player1WinsHands = 0
+    private lateinit var calculateWinner: CalculateWinner
+    private lateinit var winner: Player
 
     @Test
-    fun player1MustWinThreeTimes() {
+    fun player2ShouldBeTheWinner() {
         givenAHandRepository()
         givenAConfiguredAction()
 
-        whenCalculatePlayer1Wins()
+        whenCalculateWinner()
 
-        thenPlayer1WinsThreeTimes()
+        thenPlayer2WasTheWinner()
     }
 
     private fun givenAHandRepository() {
@@ -28,15 +29,16 @@ internal class CalculatePlayer1WinsTest {
     }
 
     private fun givenAConfiguredAction() {
-        calculatePlayer1WinsAction = CalculatePlayer1Wins(aHandRepository, Deck())
+        calculateWinner = CalculateWinner(aHandRepository, Deck())
     }
 
-    private fun whenCalculatePlayer1Wins() {
-        player1WinsHands = calculatePlayer1WinsAction.doAction()
+    private fun whenCalculateWinner() {
+        winner = calculateWinner.doAction()
     }
 
-    private fun thenPlayer1WinsThreeTimes() {
-        assertThat(player1WinsHands).isEqualTo(3)
+    private fun thenPlayer2WasTheWinner() {
+        assertThat(winner).isEqualTo(Player.PLAYER_2)
     }
+
 
 }
