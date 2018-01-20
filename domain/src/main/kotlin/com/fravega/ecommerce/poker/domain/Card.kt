@@ -1,6 +1,6 @@
-package com.fravega.ecommerce.poker.domain.hands
+package com.fravega.ecommerce.poker.domain
 
-enum class CardValue(val value: Int) {
+enum class CardValue(val points: Int) {
     TWO(2),
     THREE(3),
     FOUR(4),
@@ -16,7 +16,7 @@ enum class CardValue(val value: Int) {
     ACE(14);
 
     companion object {
-        fun fromValue(value: Int) = CardValue.values().first { it.value == value }
+        fun fromValue(value: Int) = CardValue.values().first { it.points == value }
     }
 }
 
@@ -34,6 +34,6 @@ enum class Suit(private val code: String) {
 
 data class Card(val cardValue: CardValue, val suit: Suit) {
     init {
-        check(cardValue.value in 2..14, { "Card value must be between 2 and 13" })
+        check(cardValue.points in 2..14, { "Card points must be between 2 and 14" })
     }
 }

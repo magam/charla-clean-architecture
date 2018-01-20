@@ -1,16 +1,15 @@
-package com.fravega.ecommerce.poker.test.unit.card
+package com.fravega.ecommerce.poker.test.unit
 
-import com.fravega.ecommerce.poker.domain.hands.Card
-import com.fravega.ecommerce.poker.domain.hands.CardValue
-import com.fravega.ecommerce.poker.domain.hands.Suit
+import com.fravega.ecommerce.poker.domain.Card
+import com.fravega.ecommerce.poker.domain.CardValue
+import com.fravega.ecommerce.poker.domain.Suit
 import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.api.Assertions.catchThrowable
 import org.junit.Test
-import java.math.BigInteger
 
 internal class CardTest {
 
-    private lateinit var value: BigInteger
+    private var value = 0
     private lateinit var cardSuit: String
     private lateinit var card: Card
     private lateinit var thrown: Throwable
@@ -34,20 +33,20 @@ internal class CardTest {
     }
 
     private fun givenAPairOfValidValues() {
-        value = BigInteger("4")
+        value = 4
         cardSuit = "S"
     }
 
     private fun givenAInvalidValue() {
-        value = BigInteger("99")
+        value = 99
     }
 
     private fun whenTheseValuesAreUsed() {
-        card = Card(CardValue.fromValue(value.intValueExact()), Suit.fromCode(cardSuit))
+        card = Card(CardValue.fromValue(value), Suit.fromCode(cardSuit))
     }
 
     private fun whenTheseValueIsUsed() {
-        thrown = catchThrowable { CardValue.fromValue(value.intValueExact()) }
+        thrown = catchThrowable { CardValue.fromValue(value) }
     }
 
     private fun thenACardIsConstructed() {
