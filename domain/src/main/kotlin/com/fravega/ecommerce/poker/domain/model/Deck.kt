@@ -1,10 +1,10 @@
-package com.fravega.ecommerce.poker.domain
+package com.fravega.ecommerce.poker.domain.model
 
 enum class Player {
     PLAYER_1, PLAYER_2
 }
 
-internal class Deck {
+class Deck {
 
     fun chooseAWinner(hands: Pair<Hand, Hand>): Player {
         return when {

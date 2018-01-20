@@ -1,6 +1,6 @@
 package com.fravega.ecommerce.poker.test.unit.deck
 
-import com.fravega.ecommerce.poker.domain.*
+import com.fravega.ecommerce.poker.domain.model.*
 import org.assertj.core.api.Assertions
 import org.junit.Test
 

@@ -1,8 +1,8 @@
 package com.fravega.ecommerce.poker.test.unit
 
-import com.fravega.ecommerce.poker.domain.Card
-import com.fravega.ecommerce.poker.domain.CardValue
-import com.fravega.ecommerce.poker.domain.Suit
+import com.fravega.ecommerce.poker.domain.model.Card
+import com.fravega.ecommerce.poker.domain.model.CardValue
+import com.fravega.ecommerce.poker.domain.model.Suit
 import org.assertj.core.api.Assertions.assertThat
 import org.assertj.core.api.Assertions.catchThrowable
 import org.junit.Test

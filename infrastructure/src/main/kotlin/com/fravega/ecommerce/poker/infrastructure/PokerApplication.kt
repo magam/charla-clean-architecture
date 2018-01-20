@@ -3,6 +3,7 @@ package com.fravega.ecommerce.poker.infrastructure
 import com.fasterxml.jackson.annotation.JsonProperty
 import com.fasterxml.jackson.databind.PropertyNamingStrategy
 import com.fasterxml.jackson.databind.SerializationFeature
+import com.fravega.ecommerce.poker.infrastructure.inject.Injector
 import io.dropwizard.Application
 import io.dropwizard.Configuration
 import io.dropwizard.setup.Bootstrap
@@ -26,7 +27,8 @@ class PokerApplication : Application<PokerConfiguration>() {
     }
 
     override fun run(configuration: PokerConfiguration, environment: Environment) {
-
+        val injector = Injector(configuration)
+        environment.jersey().register(injector.player1WinsResource)
     }
 }
 

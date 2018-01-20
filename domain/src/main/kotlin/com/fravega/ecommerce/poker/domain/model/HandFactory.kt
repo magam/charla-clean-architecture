@@ -1,6 +1,6 @@
-package com.fravega.ecommerce.poker.domain
+package com.fravega.ecommerce.poker.domain.model
 
-internal class HandFactory {
+class HandFactory {
 
     fun clasify(cards: List<Card>): Hand {
         require(cards.size == 5, { "Hand must have 5 cards" })

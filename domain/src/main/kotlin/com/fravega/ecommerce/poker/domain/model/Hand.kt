@@ -1,7 +1,7 @@
-package com.fravega.ecommerce.poker.domain
+package com.fravega.ecommerce.poker.domain.model
 
 sealed class Hand {
-    data class HightCard(override val cards: List<Card>) : Hand() {
+    data class HightCard (override val cards: List<Card>) : Hand() {
         override val points = 20
 
         override val sortedCards: List<Card> by lazy {

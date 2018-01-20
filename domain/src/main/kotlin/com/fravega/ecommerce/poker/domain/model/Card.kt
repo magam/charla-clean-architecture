@@ -1,4 +1,4 @@
-package com.fravega.ecommerce.poker.domain
+package com.fravega.ecommerce.poker.domain.model
 
 enum class CardValue(val points: Int) {
     TWO(2),

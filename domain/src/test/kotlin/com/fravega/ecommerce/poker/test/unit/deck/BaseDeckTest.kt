@@ -1,6 +1,8 @@
 package com.fravega.ecommerce.poker.test.unit.deck
 
-import com.fravega.ecommerce.poker.domain.*
+import com.fravega.ecommerce.poker.domain.model.Card
+import com.fravega.ecommerce.poker.domain.model.CardValue
+import com.fravega.ecommerce.poker.domain.model.Suit
 
 internal interface BaseDeckTest {
 
