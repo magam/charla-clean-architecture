@@ -17,8 +17,7 @@ class CardsRankResource(private val getCardsRank: GetCardsRank) {
     fun getRank(): Response {
         return try {
             val responseValue = getCardsRank.doAction().map {
-                CardRankResponse(it.key.cardValue.name + " of "
-                        + it.key.suit.name, it.value)
+                CardRankResponse(it.key.cardValue.name, it.key.suit.name, it.value)
             }
             Response.ok(responseValue).build()
         } catch (e: Exception) {
@@ -26,6 +25,6 @@ class CardsRankResource(private val getCardsRank: GetCardsRank) {
         }
     }
 
-    data class CardRankResponse(val card: String, val count: Int)
+    data class CardRankResponse(val card: String, val suit: String, val count: Int)
 
 }
