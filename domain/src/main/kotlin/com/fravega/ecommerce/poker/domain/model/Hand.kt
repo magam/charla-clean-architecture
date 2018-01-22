@@ -1,7 +1,7 @@
 package com.fravega.ecommerce.poker.domain.model
 
 sealed class Hand {
-    data class HightCard (override val cards: List<Card>) : Hand() {
+    data class HightCard internal constructor(override val cards: List<Card>) : Hand() {
         override val points = 20
 
         override val sortedCards: List<Card> by lazy {
@@ -9,7 +9,7 @@ sealed class Hand {
         }
     }
 
-    data class Pair(override val cards: List<Card>) : Hand() {
+    data class Pair internal constructor(override val cards: List<Card>) : Hand() {
         override val points = 21
 
         override val sortedCards: List<Card> by lazy {
@@ -18,7 +18,7 @@ sealed class Hand {
         }
     }
 
-    data class TwoPairs(override val cards: List<Card>) : Hand() {
+    data class TwoPairs internal constructor(override val cards: List<Card>) : Hand() {
         override val points = 22
 
         override val sortedCards: List<Card> by lazy {
@@ -28,7 +28,7 @@ sealed class Hand {
         }
     }
 
-    data class Three(override val cards: List<Card>) : Hand() {
+    data class Three internal constructor(override val cards: List<Card>) : Hand() {
         override val points = 23
 
         override val sortedCards: List<Card> by lazy {
@@ -37,7 +37,7 @@ sealed class Hand {
         }
     }
 
-    data class Straight(override val cards: List<Card>) : Hand() {
+    data class Straight internal constructor(override val cards: List<Card>) : Hand() {
         override val points = 24
 
         override val sortedCards: List<Card> by lazy {
@@ -45,7 +45,7 @@ sealed class Hand {
         }
     }
 
-    data class Flush(override val cards: List<Card>) : Hand() {
+    data class Flush internal constructor(override val cards: List<Card>) : Hand() {
         override val points = 25
 
         override val sortedCards: List<Card> by lazy {
@@ -53,7 +53,7 @@ sealed class Hand {
         }
     }
 
-    data class FullHouse(override val cards: List<Card>) : Hand() {
+    data class FullHouse internal constructor(override val cards: List<Card>) : Hand() {
         override val points = 26
 
         override val sortedCards: List<Card> by lazy {
@@ -62,7 +62,7 @@ sealed class Hand {
         }
     }
 
-    data class FourOfAKind(override val cards: List<Card>) : Hand() {
+    data class FourOfAKind internal constructor(override val cards: List<Card>) : Hand() {
         override val points = 27
 
         override val sortedCards: List<Card> by lazy {
@@ -71,7 +71,7 @@ sealed class Hand {
         }
     }
 
-    data class StraightFlush(override val cards: List<Card>) : Hand() {
+    data class StraightFlush internal constructor(override val cards: List<Card>) : Hand() {
         override val points = 28
 
         override val sortedCards: List<Card> by lazy {
@@ -79,7 +79,7 @@ sealed class Hand {
         }
     }
 
-    data class RoyalFlush(override val cards: List<Card>) : Hand() {
+    data class RoyalFlush internal constructor(override val cards: List<Card>) : Hand() {
         override val points = 29
 
         override val sortedCards: List<Card> by lazy {
@@ -87,10 +87,7 @@ sealed class Hand {
         }
     }
 
-
     abstract val points: Int
     abstract val cards: List<Card>
     abstract val sortedCards: List<Card>
 }
-
-

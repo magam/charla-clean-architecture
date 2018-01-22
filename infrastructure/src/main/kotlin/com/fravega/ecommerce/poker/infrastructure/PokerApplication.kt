@@ -30,6 +30,7 @@ class PokerApplication : Application<PokerConfiguration>() {
         val injector = Injector(configuration)
         environment.jersey().register(injector.playerOneVictoriesResource)
         environment.jersey().register(injector.winnerResource)
+        environment.jersey().register(injector.cardsRankResource)
     }
 }
 
