@@ -10,7 +10,9 @@ import javax.ws.rs.Produces
 @Path("/player1")
 @Produces(MediaType.APPLICATION_JSON_UTF_8)
 @Consumes(MediaType.APPLICATION_JSON_UTF_8)
-internal class PlayerOneVictoriesResource(private val calculatePlayerOneVictories: CalculatePlayerOneVictories) {
+internal class PlayerOneVictoriesResource {
+
+    private lateinit var calculatePlayerOneVictories: CalculatePlayerOneVictories
 
     @GET
     @Path("/wins")

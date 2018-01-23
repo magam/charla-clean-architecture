@@ -6,44 +6,44 @@ import com.fravega.ecommerce.poker.domain.actions.CalculateWinner
 import com.fravega.ecommerce.poker.domain.actions.GetCardsRank
 import com.fravega.ecommerce.poker.domain.model.HandFactory
 import com.fravega.ecommerce.poker.domain.model.HandRepository
-import com.fravega.ecommerce.poker.infrastructure.PokerConfiguration
 import com.fravega.ecommerce.poker.infrastructure.data.FileHandRepository
-import com.fravega.ecommerce.poker.infrastructure.rest.CardsRankResource
-import com.fravega.ecommerce.poker.infrastructure.rest.PlayerOneVictoriesResource
-import com.fravega.ecommerce.poker.infrastructure.rest.WinnerResource
+import org.springframework.beans.factory.annotation.Value
+import org.springframework.context.annotation.Bean
+import org.springframework.context.annotation.Configuration
 
-internal class Injector(private val configuration: PokerConfiguration) {
+@Configuration("BeansConfiguration")
+internal open class Injector {
 
-    private val handFactory: HandFactory = HandFactory()
+    @Value("\${dataSource.path}")
+    private lateinit var filePath: String
 
-    private val deck: Deck = Deck()
-
-    private val handRepository: HandRepository by lazy {
-        FileHandRepository(configuration.dataSource.path, handFactory)
+    @Bean
+    open fun beanFactory(): HandFactory {
+        return HandFactory()
     }
 
-    private val calculatePlayerOneVictories: CalculatePlayerOneVictories by lazy {
-        CalculatePlayerOneVictories(handRepository, deck)
+    @Bean
+    open fun deck(): Deck {
+        return Deck()
     }
 
-    private val calculateWinner: CalculateWinner by lazy {
-        CalculateWinner(handRepository, deck)
+    @Bean
+    open fun handRepository(handFactory: HandFactory): HandRepository {
+        return FileHandRepository(filePath, handFactory)
     }
 
-    private val getCardsRank: GetCardsRank by lazy {
-        GetCardsRank(handRepository)
+    @Bean
+    open fun calculatePlayerOneVictories(handRepository: HandRepository, deck: Deck): CalculatePlayerOneVictories {
+        return CalculatePlayerOneVictories(handRepository, deck)
     }
 
-    val playerOneVictoriesResource: PlayerOneVictoriesResource by lazy {
-        PlayerOneVictoriesResource(calculatePlayerOneVictories)
+    @Bean
+    open fun calculateWinner(handRepository: HandRepository, deck: Deck): CalculateWinner {
+        return CalculateWinner(handRepository, deck)
     }
 
-    val winnerResource: WinnerResource by lazy {
-        WinnerResource(calculateWinner)
+    @Bean
+    open fun getCardsRank(handRepository: HandRepository): GetCardsRank {
+        return GetCardsRank(handRepository)
     }
-
-    val cardsRankResource: CardsRankResource by lazy {
-        CardsRankResource(getCardsRank)
-    }
-
 }

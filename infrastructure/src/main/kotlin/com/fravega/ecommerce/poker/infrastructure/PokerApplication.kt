@@ -1,40 +1,17 @@
 package com.fravega.ecommerce.poker.infrastructure
 
-import com.fasterxml.jackson.annotation.JsonProperty
-import com.fasterxml.jackson.databind.PropertyNamingStrategy
-import com.fasterxml.jackson.databind.SerializationFeature
-import com.fravega.ecommerce.poker.infrastructure.inject.Injector
-import io.dropwizard.Application
-import io.dropwizard.Configuration
-import io.dropwizard.setup.Bootstrap
-import io.dropwizard.setup.Environment
+import org.springframework.boot.SpringApplication
+import org.springframework.boot.autoconfigure.SpringBootApplication
+import org.springframework.boot.web.support.SpringBootServletInitializer
 
-class PokerApplication : Application<PokerConfiguration>() {
+
+@SpringBootApplication
+open class PokerApplication : SpringBootServletInitializer() {
     companion object {
         @JvmStatic
         fun main(args: Array<String>) {
-            PokerApplication().run(*args)
+            SpringApplication.run(PokerApplication::class.java, *args)
         }
-    }
-
-    override fun initialize(bootstrap: Bootstrap<PokerConfiguration>) {
-        super.initialize(bootstrap)
-        with(bootstrap.objectMapper) {
-            findAndRegisterModules()
-            configure(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS, false)
-            setPropertyNamingStrategy(PropertyNamingStrategy.LOWER_CAMEL_CASE)
-        }
-    }
-
-    override fun run(configuration: PokerConfiguration, environment: Environment) {
-        val injector = Injector(configuration)
-        environment.jersey().register(injector.playerOneVictoriesResource)
-        environment.jersey().register(injector.winnerResource)
-        environment.jersey().register(injector.cardsRankResource)
     }
 }
-
-data class PokerConfiguration(@JsonProperty("dataSource") val dataSource: DataSourceConfiguration) : Configuration()
-
-data class DataSourceConfiguration(val path: String)
 

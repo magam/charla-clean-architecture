@@ -1,0 +1,17 @@
+spring:
+    main:
+     LogStartupInfo: true
+
+server:
+  port: 8080
+  contextPath: /poker/api
+
+security:
+  basic:
+    enabled: false
+
+logging:
+  file: poker.log
+
+dataSource:
+  path: infrastructure/src/main/resources/poker.txt
