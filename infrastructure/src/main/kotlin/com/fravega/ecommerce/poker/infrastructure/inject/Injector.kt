@@ -6,10 +6,11 @@ import com.fravega.ecommerce.poker.domain.actions.CalculateWinner
 import com.fravega.ecommerce.poker.domain.actions.GetCardsRank
 import com.fravega.ecommerce.poker.domain.model.HandFactory
 import com.fravega.ecommerce.poker.domain.model.HandRepository
-import com.fravega.ecommerce.poker.infrastructure.data.FileHandRepository
+import com.fravega.ecommerce.poker.infrastructure.data.SQLHandRepository
 import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
+import javax.persistence.EntityManager
 
 @Configuration("BeansConfiguration")
 internal open class Injector {
@@ -28,8 +29,8 @@ internal open class Injector {
     }
 
     @Bean
-    open fun handRepository(handFactory: HandFactory): HandRepository {
-        return FileHandRepository(filePath, handFactory)
+    open fun handRepository(em: EntityManager, handFactory: HandFactory): HandRepository {
+        return SQLHandRepository(em, handFactory)
     }
 
     @Bean

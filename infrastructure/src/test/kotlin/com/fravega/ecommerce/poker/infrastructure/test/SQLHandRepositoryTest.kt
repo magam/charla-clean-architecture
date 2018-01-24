@@ -1,14 +1,14 @@
 package com.fravega.ecommerce.poker.infrastructure.test
 
 import com.fravega.ecommerce.poker.domain.model.*
-import com.fravega.ecommerce.poker.infrastructure.data.FileHandRepository
+import com.fravega.ecommerce.poker.infrastructure.data.SQLHandRepository
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Test
 
-internal class FileHandRepositoryTest {
+internal class SQLHandRepositoryTest {
 
-    private lateinit var path: String
-    private lateinit var fileHandRepository: FileHandRepository
+    /*private lateinit var path: String
+    private lateinit var SQLHandRepository: SQLHandRepository
     private var handFactory = HandFactory()
 
     @Test
@@ -25,11 +25,11 @@ internal class FileHandRepositoryTest {
     }
 
     private fun whenTheFileIsLoaded() {
-        fileHandRepository = FileHandRepository(path, handFactory)
+        SQLHandRepository = SQLHandRepository(path, handFactory)
     }
 
     private fun thenHandsWasReadOK() {
-        val handPairs = fileHandRepository.findAll()
+        val handPairs = SQLHandRepository.findAll()
         assertThat(handPairs).hasSize(5)
         handPairs.forEach {
             assertThat(it.first).isEqualTo(firstHand())
@@ -56,5 +56,6 @@ internal class FileHandRepositoryTest {
                 Card(CardValue.ACE, Suit.CLUBS)
         ))
     }
+    */
 
 }

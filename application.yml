@@ -1,6 +1,22 @@
 spring:
-    main:
-     LogStartupInfo: true
+  main:
+   LogStartupInfo: true
+  h2:
+    console:
+      enbaled: false
+  datasource:
+    url: jdbc:h2:file:./infrastructure/src/main/resources/poker
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+      naming-strategy: org.hibernate.cfg.ImprovedNamingStrategy
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.H2Dialect
 
 server:
   port: 8080
@@ -11,6 +27,10 @@ security:
     enabled: false
 
 logging:
+  level:
+    org:
+      hibernate: DEBUG
+      springframework: INFO
   file: poker.log
 
 dataSource:
