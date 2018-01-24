@@ -1,22 +1,18 @@
 package com.fravega.ecommerce.poker.infrastructure.inject
 
-import com.fravega.ecommerce.poker.domain.model.Deck
 import com.fravega.ecommerce.poker.domain.actions.CalculatePlayerOneVictories
 import com.fravega.ecommerce.poker.domain.actions.CalculateWinner
 import com.fravega.ecommerce.poker.domain.actions.GetCardsRank
+import com.fravega.ecommerce.poker.domain.model.Deck
 import com.fravega.ecommerce.poker.domain.model.HandFactory
 import com.fravega.ecommerce.poker.domain.model.HandRepository
 import com.fravega.ecommerce.poker.infrastructure.data.SQLHandRepository
-import org.springframework.beans.factory.annotation.Value
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import javax.persistence.EntityManager
 
 @Configuration("BeansConfiguration")
 internal open class Injector {
-
-    @Value("\${dataSource.path}")
-    private lateinit var filePath: String
 
     @Bean
     open fun beanFactory(): HandFactory {

@@ -1,10 +1,5 @@
 package com.fravega.ecommerce.poker.infrastructure.test
 
-import com.fravega.ecommerce.poker.domain.model.*
-import com.fravega.ecommerce.poker.infrastructure.data.SQLHandRepository
-import org.assertj.core.api.Assertions.assertThat
-import org.junit.Test
-
 internal class SQLHandRepositoryTest {
 
     /*private lateinit var path: String

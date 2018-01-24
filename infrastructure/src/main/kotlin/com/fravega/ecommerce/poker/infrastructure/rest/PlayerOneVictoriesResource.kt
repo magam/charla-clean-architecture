@@ -2,11 +2,11 @@ package com.fravega.ecommerce.poker.infrastructure.rest
 
 import com.fravega.ecommerce.poker.domain.actions.CalculatePlayerOneVictories
 import javax.inject.Inject
-import javax.ws.rs.core.Response
 import javax.ws.rs.Consumes
 import javax.ws.rs.GET
 import javax.ws.rs.Path
 import javax.ws.rs.Produces
+import javax.ws.rs.core.Response
 
 @Path("/player1")
 @Produces(MediaType.APPLICATION_JSON_UTF_8)

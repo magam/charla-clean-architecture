@@ -32,6 +32,3 @@ logging:
       hibernate: DEBUG
       springframework: INFO
   file: poker.log
-
-dataSource:
-  path: infrastructure/src/main/resources/poker.txt
