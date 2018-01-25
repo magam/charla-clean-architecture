@@ -8,6 +8,6 @@ class GetCardsRank(private val handRepository: HandRepository) {
     fun doAction(): Map<Card, Int> {
         return handRepository.findAll().map {
             it.first.cards.plus(it.second.cards)
-        }.flatten().groupingBy { it }.eachCount()
+        }.flatten().groupingBy { it }.eachCount().toList().sortedByDescending { (_, value) -> value }.toMap()
     }
 }
