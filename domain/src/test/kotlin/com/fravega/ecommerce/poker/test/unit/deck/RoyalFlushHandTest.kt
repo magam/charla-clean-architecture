@@ -26,11 +26,11 @@ internal class RoyalFlushHandTest : BaseDeckTest {
     }
 
     private fun givenARoyalFlush() {
-        hand1 = handFactory.clasify(aRoyalFlush())
+        hand1 = handFactory.classify(aRoyalFlush())
     }
 
     private fun givenAnotherRoyalFlush() {
-        hand2 = handFactory.clasify(aRoyalFlush())
+        hand2 = handFactory.classify(aRoyalFlush())
     }
 
     private fun whenDeckChooseAWinner() {

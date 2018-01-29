@@ -64,27 +64,27 @@ internal class FullHouseHandTest : BaseDeckTest {
     }
 
     private fun givenAFullHouse() {
-        hand1 = handFactory.clasify(aFullHouse())
+        hand1 = handFactory.classify(aFullHouse())
     }
 
     private fun givenTheSameFullHouse() {
-        hand2 = handFactory.clasify(aFullHouse())
+        hand2 = handFactory.classify(aFullHouse())
     }
 
     private fun givenAnotherFullHouseWithBetterHighCard() {
-        hand2 = handFactory.clasify(aFullHouseWithBetterHighCard())
+        hand2 = handFactory.classify(aFullHouseWithBetterHighCard())
     }
 
     private fun givenAFourOfAKind() {
-        hand2 = handFactory.clasify(aFourOfAKind())
+        hand2 = handFactory.classify(aFourOfAKind())
     }
 
     private fun givenAStraigtFlush() {
-        hand2 = handFactory.clasify(aStraightFlush())
+        hand2 = handFactory.classify(aStraightFlush())
     }
 
     private fun givenARoyalFlush() {
-        hand2 = handFactory.clasify(aRoyalFlush())
+        hand2 = handFactory.classify(aRoyalFlush())
     }
 
     private fun whenDeckChooseAWinner() {

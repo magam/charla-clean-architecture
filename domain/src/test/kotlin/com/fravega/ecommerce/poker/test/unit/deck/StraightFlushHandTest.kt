@@ -43,19 +43,19 @@ internal class StraightFlushHandTest : BaseDeckTest {
     }
 
     private fun givenAStraigtFlush() {
-        hand1 = handFactory.clasify(aStraightFlush())
+        hand1 = handFactory.classify(aStraightFlush())
     }
 
     private fun givenTheSameStraightFlush() {
-        hand2 = handFactory.clasify(aStraightFlush())
+        hand2 = handFactory.classify(aStraightFlush())
     }
 
     private fun givenAnotherStraightFlushWithBetterHighCard() {
-        hand2 = handFactory.clasify(aStraightFlushWithBetterHighCard())
+        hand2 = handFactory.classify(aStraightFlushWithBetterHighCard())
     }
 
     private fun givenARoyalFlush() {
-        hand2 = handFactory.clasify(aRoyalFlush())
+        hand2 = handFactory.classify(aRoyalFlush())
     }
 
     private fun whenDeckChooseAWinner() {

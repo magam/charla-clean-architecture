@@ -122,52 +122,52 @@ class HighCardTest : BaseDeckTest{
     }
 
     private fun givenAHighCard() {
-        hand1 = handFactory.clasify(aHightCard())
+        hand1 = handFactory.classify(aHightCard())
     }
 
     private fun givenTheSameHighCard() {
-        hand2 = handFactory.clasify(aHightCard())
+        hand2 = handFactory.classify(aHightCard())
     }
 
     private fun givenAGreaterHighCard() {
-        hand2 = handFactory.clasify(aGreaterHightCard())
+        hand2 = handFactory.classify(aGreaterHightCard())
     }
 
 
     private fun givenAPair() {
-        hand2 = handFactory.clasify(aPairOf())
+        hand2 = handFactory.classify(aPairOf())
     }
 
     private fun givenTwoPairs() {
-        hand2 = handFactory.clasify(twoPairs())
+        hand2 = handFactory.classify(twoPairs())
     }
 
     private fun givenAThreeOfSix(){
-        hand2 = handFactory.clasify(aThree())
+        hand2 = handFactory.classify(aThree())
     }
 
     private fun givenAStraightStartingAtFour(){
-        hand2 = handFactory.clasify(aStraight())
+        hand2 = handFactory.classify(aStraight())
     }
 
     private fun givenAFlush(){
-        hand2 = handFactory.clasify(aFlush())
+        hand2 = handFactory.classify(aFlush())
     }
 
     private fun givenAFullHouse() {
-        hand2 = handFactory.clasify(aFullHouse())
+        hand2 = handFactory.classify(aFullHouse())
     }
 
     private fun givenAFourOfAKind() {
-        hand2 = handFactory.clasify(aFourOfAKind())
+        hand2 = handFactory.classify(aFourOfAKind())
     }
 
     private fun givenAStraigtFlush() {
-        hand2 = handFactory.clasify(aStraightFlush())
+        hand2 = handFactory.classify(aStraightFlush())
     }
 
     private fun givenARoyalFlush() {
-        hand2 = handFactory.clasify(aRoyalFlush())
+        hand2 = handFactory.classify(aRoyalFlush())
     }
 
     private fun whenDeckChooseAWinner() {

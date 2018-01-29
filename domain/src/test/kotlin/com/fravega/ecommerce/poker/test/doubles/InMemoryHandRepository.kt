@@ -20,11 +20,11 @@ internal class InMemoryHandRepository : HandRepository {
     }
 
     private fun aPairOfHandsWinningPlayer1(): Pair<Hand, Hand> {
-        return handFactory.clasify(aFlush()) to handFactory.clasify(aThree())
+        return handFactory.classify(aFlush()) to handFactory.classify(aThree())
     }
 
     private fun aPairOfHandsWinningPlayer2(): Pair<Hand, Hand> {
-        return handFactory.clasify(aThree()) to handFactory.clasify(aFlush())
+        return handFactory.classify(aThree()) to handFactory.classify(aFlush())
     }
 
 

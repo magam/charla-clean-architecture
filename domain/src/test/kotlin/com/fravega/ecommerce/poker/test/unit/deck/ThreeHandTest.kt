@@ -93,39 +93,39 @@ internal class ThreeHandTest : BaseDeckTest {
     }
 
     private fun givenAThree() {
-        hand1 = handFactory.clasify(aThree())
+        hand1 = handFactory.classify(aThree())
     }
 
     private fun givenTheSameThree() {
-        hand2 = handFactory.clasify(aThree())
+        hand2 = handFactory.classify(aThree())
     }
 
     private fun givenATheSameThreeWithGreaterHighCard() {
-        hand2 = handFactory.clasify(aThreeWithGreaterHighCard())
+        hand2 = handFactory.classify(aThreeWithGreaterHighCard())
     }
 
     private fun givenAStraight() {
-        hand2 = handFactory.clasify(aStraight())
+        hand2 = handFactory.classify(aStraight())
     }
 
     private fun givenAFlush() {
-        hand2 = handFactory.clasify(aFlush())
+        hand2 = handFactory.classify(aFlush())
     }
 
     private fun givenAFullHouse() {
-        hand2 = handFactory.clasify(aFullHouse())
+        hand2 = handFactory.classify(aFullHouse())
     }
 
     private fun givenAFourOfAKind() {
-        hand2 = handFactory.clasify(aFourOfAKind())
+        hand2 = handFactory.classify(aFourOfAKind())
     }
 
     private fun givenAStraigtFlush() {
-        hand2 = handFactory.clasify(aStraightFlush())
+        hand2 = handFactory.classify(aStraightFlush())
     }
 
     private fun givenARoyalFlush() {
-        hand2 = handFactory.clasify(aRoyalFlush())
+        hand2 = handFactory.classify(aRoyalFlush())
     }
 
     private fun whenDeckChooseAWinner() {

@@ -74,31 +74,31 @@ internal class FlushHandTest : BaseDeckTest {
     }
 
     private fun givenAFlush() {
-        hand1 = handFactory.clasify(aFlush())
+        hand1 = handFactory.classify(aFlush())
     }
 
     private fun givenTheSameFlush() {
-        hand2 = handFactory.clasify(aFlush())
+        hand2 = handFactory.classify(aFlush())
     }
 
     private fun givenAnotherFlushWithBetterHighCard() {
-        hand2 = handFactory.clasify(aFlushWithBetterHighCard())
+        hand2 = handFactory.classify(aFlushWithBetterHighCard())
     }
 
     private fun givenAFullHouse() {
-        hand2 = handFactory.clasify(aFullHouse())
+        hand2 = handFactory.classify(aFullHouse())
     }
 
     private fun givenAFourOfAKind() {
-        hand2 = handFactory.clasify(aFourOfAKind())
+        hand2 = handFactory.classify(aFourOfAKind())
     }
 
     private fun givenAStraigtFlush() {
-        hand2 = handFactory.clasify(aStraightFlush())
+        hand2 = handFactory.classify(aStraightFlush())
     }
 
     private fun givenARoyalFlush() {
-        hand2 = handFactory.clasify(aRoyalFlush())
+        hand2 = handFactory.classify(aRoyalFlush())
     }
 
     private fun whenDeckChooseAWinner() {

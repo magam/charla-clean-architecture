@@ -12,8 +12,8 @@ internal class SQLHandRepository(private val entityManager: EntityManager, priva
 
     override fun findAll(): List<Pair<Hand, Hand>> {
         return repo.findAll().map {
-            handFactory.clasify(buildHand(it.card1, it.card2, it.card3, it.card4, it.card5)) to
-                    handFactory.clasify(buildHand(it.card6, it.card7, it.card8, it.card9, it.card10))
+            handFactory.classify(buildHand(it.card1, it.card2, it.card3, it.card4, it.card5)) to
+                    handFactory.classify(buildHand(it.card6, it.card7, it.card8, it.card9, it.card10))
         }
     }
 

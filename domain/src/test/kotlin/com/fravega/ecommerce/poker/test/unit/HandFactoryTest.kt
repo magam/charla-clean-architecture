@@ -181,7 +181,7 @@ internal class HandFactoryTest {
     }
 
     private fun whenResolveHandValue() {
-        hand = handFactory.clasify(cardList)
+        hand = handFactory.classify(cardList)
     }
 
     private fun thenAHightCardWasResolved() {

@@ -54,23 +54,23 @@ internal class FourOfAKindHandTest : BaseDeckTest {
 
 
     private fun givenAFourOfAKind() {
-        hand1 = handFactory.clasify(aFourOfAKind())
+        hand1 = handFactory.classify(aFourOfAKind())
     }
 
     private fun givenTheSameFourOfAKind() {
-        hand2 = handFactory.clasify(aFourOfAKind())
+        hand2 = handFactory.classify(aFourOfAKind())
     }
 
     private fun givenAnotherFourOfAKindWithBetterHighCard() {
-        hand2 = handFactory.clasify(aFourOfAKindWithBetterHighCard())
+        hand2 = handFactory.classify(aFourOfAKindWithBetterHighCard())
     }
 
     private fun givenAStraigtFlush() {
-        hand2 = handFactory.clasify(aStraightFlush())
+        hand2 = handFactory.classify(aStraightFlush())
     }
 
     private fun givenARoyalFlush() {
-        hand2 = handFactory.clasify(aRoyalFlush())
+        hand2 = handFactory.classify(aRoyalFlush())
     }
 
     private fun whenDeckChooseAWinner() {

@@ -2,7 +2,7 @@ package com.fravega.ecommerce.poker.domain.model
 
 class HandFactory {
 
-    fun clasify(cards: List<Card>): Hand {
+    fun classify(cards: List<Card>): Hand {
         require(cards.size == 5, { "Hand must have 5 cards" })
         require(cards.groupBy { it }.count() == 5, { "Hand can't contain a repeated card" })
 
