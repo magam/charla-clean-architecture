@@ -34,3 +34,4 @@ fabric.properties
 *.rar
 hs_err_pid*
 .directory
+**.trace.db
