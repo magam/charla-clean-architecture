@@ -1,4 +1,4 @@
-# Poker game
+# Poker game - explanation
  In the card game poker, a hand consists of five cards and are ranked, from lowest to highest, in the following way:
 * High Card: Highest value card.
 * One Pair: Two cards of the same value.
